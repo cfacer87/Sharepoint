@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <style>
+    .faq-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px 0;
+    }
+
+    .faq-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What is SharePoint?</span>
+        <span class="faq-arrow">&#9660;</span>
+      </div>
+      <div class="faq-answer">
+        SharePoint is a web-based collaborative platform that integrates with Microsoft Office.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do I use SharePoint?</span>
+        <span class="faq-arrow">&#9660;</span>
+      </div>
+      <div class="faq-answer">
+        You can use SharePoint to store, organize, share, and access information from any device.
+      </div>
+    </div>
+    <!-- Add more FAQ items as needed -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+          const answer = item.querySelector('.faq-answer');
+          const arrow = item.querySelector('.faq-arrow');
+          const isActive = item.querySelector('.faq-question').class
